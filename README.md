@@ -1,2 +1,2 @@
-# pagina-movies
+# movies
 Es una página creada para prácticar
