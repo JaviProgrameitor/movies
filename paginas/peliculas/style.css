@@ -8,13 +8,13 @@
 	--blanco: #F8F7EF;
 }
 
-body {
+/* body {
     background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0,.8)),url(./img/fondo.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     background-position: center center;
-}
+} */
 
 /* navbar */
 
@@ -97,13 +97,18 @@ header .checkbtn {
 /* section */
 
 section {
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0,.8)),url(./img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center center;
     color: var(--blanco);
+	padding-top: 15px;
 }
 
 section h1 {
 	font-size: 27px;
 	text-align: center;
-	margin: 20px 0;
 }
 
 section h2 {
