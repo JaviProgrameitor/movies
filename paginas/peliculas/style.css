@@ -103,6 +103,7 @@ section {
     background-attachment: fixed;
     background-position: center center;
     color: var(--blanco);
+	height: 100%;
 	padding-top: 15px;
 }
 
