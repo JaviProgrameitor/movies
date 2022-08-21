@@ -1,0 +1,240 @@
+* {
+    padding: 0;
+    margin: 0;
+
+	/* variables */
+	--fondo: #293133;
+	--naranjita: #d86f55;
+	--blanco: #F8F7EF;
+
+	--sombrita: 0 0 20px #d23c00;
+	--sombra: 0 0 50px #d23c00;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0,.8)),url(./img/fondo.jpg);
+}
+
+/* navbar */
+
+header {
+	background-color: var(--naranjita);
+	height: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+header .container-logo img {
+	line-height: 50px;
+    height: 30px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 15px;
+	border-radius: 15px;
+}
+
+header .container-nav {
+	position: fixed;
+	top: 90px;
+	left: 200%;
+	transition: all .8s;
+	z-index: 3;
+}
+
+header .container-nav ul {
+	display: flex;
+	flex-direction: column;
+	padding-top: 90px;
+	margin-right: 25px;
+	background-color: var(--naranjita);
+
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+}
+
+header .container-nav ul li {
+	list-style: none;
+	line-height: 90px;
+	text-align: center;
+}
+
+header .container-nav ul li a {
+	text-decoration: none;
+	padding: 20px;
+	color: black;
+}
+
+header .container-nav ul li a.active, header .container-nav ul li a:hover {
+	color: var(--blanco);
+}
+
+header #check {
+	display: none;
+}
+
+header .checkbtn {
+	float: right;
+	color: black;
+	padding: 0 20px;
+	line-height: 50px;
+	font-size: 30px;
+}
+
+#check:checked ~ .container-nav {
+	left: 0;
+}
+
+#check:checked ~ .checkbtn {
+	position: fixed;
+	right: 0;
+	z-index: 5;
+}
+
+/* navbar */
+
+/* section */
+
+/*----- despedida -----*/
+
+section .container-despedida {
+    margin-top: 1px;
+}
+
+section .container-despedida .div-despedida {
+    height: 267px;
+    display: flex;
+    justify-content: center;
+    perspective: 10000px;
+}
+
+section .container-despedida .div-despedida .img-araña {
+    width: 150px;
+    position: relative;
+	top: -267px;
+    z-index: 1;
+
+	animation-name: bajada;
+	animation-duration: 5s;
+	animation-delay: 1s;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes bajada {
+	0% { top: -265px;}
+	5% { top: -265px;}
+
+	65% { top: 0;}
+
+	100% { top: 0;
+	transform: rotateY(55deg);
+	}
+}
+
+/*----- cartelito ----- */
+
+section .container-cartel {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+section .container-cartel .div-cartel {
+	display: flex;
+}
+
+section .container-cartel .div-cartel .img-cartel {
+	width: 150px;
+}
+
+section .container-cartel .div-cartel .texto-cartel {
+	background-color: white;
+	width: 120px;
+	height: 60px;
+	margin-top: 45px;
+	margin-left: 10px;
+	box-shadow: var(--sombrita), var(--sombrita), var(--sombrita);
+
+	animation-name: sombra;
+	animation-duration: 3s;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+@keyframes sombra {
+	0% { box-shadow: var(--sombrita), var(--sombrita), var(--sombrita);}
+	40% { box-shadow: var(--sombrita), var(--sombrita), var(--sombrita);}
+
+	45% { box-shadow: var(--sombra), var(--sombra), var(--sombra);}
+	50% { box-shadow: var(--sombrita), var(--sombrita), var(--sombrita);}
+	55% { box-shadow: var(--sombra), var(--sombra), var(--sombra);}
+
+	60% { box-shadow: var(--sombrita), var(--sombrita), var(--sombrita);}
+	100% {box-shadow: var(--sombrita), var(--sombrita), var(--sombrita);}
+}
+
+section .container-cartel .div-cartel .texto-cartel .texto {
+	color: black;
+	display: inline-block;
+	padding: 12px 10px;
+	text-align: center;
+}
+
+
+/* section */
+
+@media (min-width: 800px) {
+
+	header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	header .container-nav {
+		height: 50px;
+		position: static;
+	}
+	
+	header .container-nav ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		padding-top: 0px;
+		margin-right: 0px;
+		background-color: var(--naranjita);
+
+		position: static;
+		width: 100%;
+		height: 100%;
+	}
+	
+	header .container-nav ul li {
+		margin: 0 25px;
+		list-style: none;
+		line-height: 0px;
+		text-align: none;
+	}
+	
+	header .container-nav ul li a {
+		color: black;
+		padding: 0px;
+	}
+	
+	header .container-nav ul li a.active, header .container-nav ul li a:hover {
+		color: var(--blanco);
+	}
+	
+	header #check {
+		display: none;
+	}
+	
+	header .checkbtn {
+		display: none;
+	}
+}
